@@ -6,14 +6,6 @@ from langchain_openai import ChatOpenAI
 # Load environment variables (e.g., OpenAI API keys) from a .env file located on the local system
 env_path = r'/Users/devshankha/Documents/Jupyter/.env'
 load_dotenv(env_path)
-prompt_template = PromptTemplate(
-    input_variables=["name"],
-    template="Hello, {name}! How can I help you today?"
-)
-
-# Generate the prompt by filling in the variable
-formatted_prompt = prompt_template.format(name="David")
-print(formatted_prompt)
 chat_model = ChatOpenAI(model="gpt-3.5-turbo")
 
 # Send a message to the model and get the response
