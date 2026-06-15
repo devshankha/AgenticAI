@@ -1,6 +1,4 @@
 from dotenv import load_dotenv
-from langchain_core.prompts import PromptTemplate
-from langchain_classic.chains import create_retrieval_chain
 from langchain_openai import ChatOpenAI
 
 # Load environment variables (e.g., OpenAI API keys) from a .env file located on the local system
