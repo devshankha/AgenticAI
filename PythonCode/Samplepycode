@@ -1,0 +1,21 @@
+# 1. Define the schema by inheriting from BaseModel
+class User(BaseModel):
+    id: int
+    name: str
+    email: EmailStr
+    is_active: bool = True  # Default value
+
+# 2. Supply raw data (notice 'id' is sent as a string)
+raw_data = {
+    "id": "123",  # Will be coerced into an integer
+    "name": "Alice",
+    "email": "alice@example.com"
+}
+# 3. Instantiate and validate
+user = User(**raw_data)
+
+print(user.id)         # Output: 123 (Successfully coerced to an int)
+print(user.is_active)  # Output: True (Fell back to default value)
+
+# 4. Serialize back to JSON
+print(user.model_dump_json())
